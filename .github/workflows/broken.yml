@@ -4,6 +4,8 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@4
       - name: Read the readme
         run: cat README.md
       - name: Show the Python version
