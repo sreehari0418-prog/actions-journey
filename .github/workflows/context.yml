@@ -1,13 +1,13 @@
-name: sree
-on: push 
+name: context
+on: push
 jobs:
-  test:
+  describe:
     runs-on: ubuntu-latest
     steps:
-      - name: printing...
+      - name: Describe this run
         run: |
-          echo "repository name: ${{ github.repository }}"
-          echo "branch: ${{ github.ref_name }}"
-          echo "commit id: ${{ github.sha }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
           echo "Event: ${{ github.event_name }}"
-          echo "runner: ${{ runner.os }}"
+          echo "Runner OS: ${{ runner.os }}"
