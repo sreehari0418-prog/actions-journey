@@ -1,0 +1,15 @@
+name: sree
+on: push
+env:
+  APP_NAME: journey
+jobs:
+  patti:
+    runs-on: ubuntu-latest
+    env:
+      LOG_LEVEL: info
+    steps:
+      - run: echo "$APP_NAME and $LOG_LEVEL"
+      - env:
+          LOG_LEVEL: debug
+        run: echo "$LOG_LEVEL"
+
