@@ -1,0 +1,11 @@
+name: inspect
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          uname -a
+          ls
+      - run: find . -type f | wc -l
