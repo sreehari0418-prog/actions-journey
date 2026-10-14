@@ -6,8 +6,8 @@ jobs:
     steps:
       - name: printing...
         run: |
-        echo "repository name: ${{ github.repository }}"
-        echo "branch: ${{ github.ref_name }}"
-        echo "commit id: ${{ github.sha }}"
-        echo "Event: ${{ github.event_name }}"
-        echo "runner: ${{ runner.os }}"
+          echo "repository name: ${{ github.repository }}"
+          echo "branch: ${{ github.ref_name }}"
+          echo "commit id: ${{ github.sha }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "runner: ${{ runner.os }}"
