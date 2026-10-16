@@ -1,0 +1,10 @@
+name: checks
+on:
+  workflow_call:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run the shared checks
+        run: echo "shared checks passed"
