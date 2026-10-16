@@ -1,0 +1,23 @@
+name: handoff
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create the package
+        run: echo "version 1" > app.txt
+      - name: Upload the package
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-package
+          path: app.txt
+  verify:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the package
+        uses: actions/download-artifact@v4
+        with:
+          name: app-package
+      - name: Check the file arrived
+        run: test -f app.txt && cat app.txt
